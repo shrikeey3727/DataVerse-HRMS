@@ -1,4 +1,4 @@
-# 💼 DataVerse HRMS — Enterprise-Grade HR Management System (SQL Beast Mode)
+# 💼 DataVerse HRMS — Enterprise-Grade HR Management System
 
 **DataVerse HRMS** is a feature-rich, deeply-architected **SQL-powered backend engine** for managing Human Resource operations in an enterprise.
 
