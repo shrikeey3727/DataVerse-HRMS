@@ -51,9 +51,7 @@ Module	Description
 ✅ Security: Role-based privilege control
 
 🧠 Sample Queries
-sql
-Copy
-Edit
+
 -- 1. Get top 5 departments with highest average salary
 SELECT d.dept_name, AVG(s.amount) AS avg_salary
 FROM Department d
@@ -78,9 +76,7 @@ Role-based access: HR, Manager, Admin
 Materialized views for analytics dashboards (future)
 
 📂 Folder Structure
-pgsql
-Copy
-Edit
+
 dataverse-hrms/
 ├── ddl/                   # Table definitions (CREATE scripts)
 ├── dml/                   # Data insertion (INSERT scripts)
@@ -120,19 +116,3 @@ MIT License — open for learning, forking, and enhancement.
 Built for system designers. Meant for production.
 
 — Powered by SQL and System Thinking, by Shrikee
-
-markdown
-Copy
-Edit
-
----
-
-Let me know which one to serve next:
-- 🔹 `SmartBank Pro`
-- 🔹 `OOP-Singularity XT (Java)`
-- 🔹 `OOP-Singularity XT.JS`
-- 🔹 `Neuro Nexus`
-- 🔹 `.NET Full Stack Beast`
-- 🔹 `JS Terminal Emulator`
-
-Say the word, and your dev archive shall expand 🔥
