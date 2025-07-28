@@ -1,0 +1,6 @@
+CREATE TABLE Position (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    pay_band VARCHAR(10),
+    is_managerial BOOLEAN DEFAULT FALSE
+);

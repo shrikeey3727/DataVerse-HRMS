@@ -1,0 +1,16 @@
+CREATE TABLE Salary_Log (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  emp_id INT,
+  amount DECIMAL(10,2),
+  changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DELIMITER //
+CREATE TRIGGER after_salary_update
+AFTER UPDATE ON Salary
+FOR EACH ROW
+BEGIN
+  INSERT INTO Salary_Log (emp_id, amount)
+  VALUES (NEW.emp_id, NEW.amount);
+END;//
+DELIMITER ;
