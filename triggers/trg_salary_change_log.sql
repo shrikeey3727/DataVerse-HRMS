@@ -1,3 +1,4 @@
+-- Logs salary changes into Salary_Log table
 CREATE TABLE Salary_Log (
   id INT AUTO_INCREMENT PRIMARY KEY,
   emp_id INT,

@@ -1,8 +1,10 @@
+-- Calculates total salary of an employee within active pay range
 DELIMITER //
-CREATE FUNCTION fn_get_age (birth_date DATE)
-RETURNS INT
-DETERMINISTIC
+CREATE PROCEDURE calculate_salary (IN p_emp_id INT, OUT p_total DECIMAL(10,2))
 BEGIN
-  RETURN TIMESTAMPDIFF(YEAR, birth_date, CURDATE());
+  SELECT SUM(amount)
+  INTO p_total
+  FROM Salary
+  WHERE emp_id = p_emp_id AND CURRENT_DATE BETWEEN effective_from AND effective_to;
 END;//
 DELIMITER ;

@@ -1,3 +1,5 @@
 GRANT SELECT, INSERT, UPDATE ON Employee TO hr_user;
 GRANT SELECT, UPDATE ON Salary TO manager_user;
 GRANT ALL PRIVILEGES ON *.* TO admin_user WITH GRANT OPTION;
+
+-- Privilege assignment to roles
