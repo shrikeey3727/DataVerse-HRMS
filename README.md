@@ -1,118 +1,166 @@
-# 📚 SQL Concepts - DataVerse HRMS
+# 💼 DataVerse HRMS — Enterprise-Grade SQL Backend
 
-**DataVerse HRMS** is not just a project — it's a complete SQL backend system that demonstrates mastery over the full spectrum of SQL concepts, from beginner syntax to enterprise-grade architectural features.
-
----
-
-## 🔰 Beginner-Level SQL (100% Covered)
-
-| Concept                                     | Application                              |
-| ------------------------------------------- | ---------------------------------------- |
-| `CREATE TABLE`, `ALTER`, `DROP`             | All core entities in `ddl/01_entities/`  |
-| Data types (`INT`, `VARCHAR`, `DATE`, etc.) | Every table schema                       |
-| `PRIMARY KEY`, `AUTO_INCREMENT`             | Used in all entity tables                |
-| `NOT NULL`, `DEFAULT`, `UNIQUE`             | Field-level validations and constraints  |
-| `INSERT`, `SELECT`, `UPDATE`, `DELETE`      | CRUD operations in `dml/`, `procedures/` |
+**DataVerse HRMS** is a production-grade, advanced SQL-powered backend engine tailored for HR systems in real-world enterprises. This system isn't just about CRUD — it's a full-stack-ready, analytics-capable, modular backend designed for reporting, access control, triggers, and business logic.
 
 ---
 
-## 🛠 Intermediate-Level SQL (100% Covered)
+## 🔍 Quick Overview
 
-| Concept                            | Application                                 |
-| ---------------------------------- | ------------------------------------------- |
-| `FOREIGN KEY` constraints          | Referential integrity in relationships.sql  |
-| `JOINs` (INNER, LEFT, RIGHT)       | Views and analytics queries                 |
-| `GROUP BY`, `HAVING`, `ORDER BY`   | Reporting and salary stats                  |
-| `CHECK` constraints                | Salary period validation, score bounds      |
-| `UNION`, `DISTINCT`                | Used in consolidated views and search logic |
-| `LIKE`, `IN`, `BETWEEN`, `IS NULL` | Filtering and dynamic reports               |
-| `CASE`, `IF`, `COALESCE`, `IFNULL` | Used in business logic and views            |
+A modular, production-grade HR backend system powered by MySQL. Includes:
+
+* ✅ DDL + DML + Views + Triggers + RBAC
+* 📈 Analytics-ready structure
+* 💡 Designed for real-world enterprise scenarios
 
 ---
 
-## ⚙️ Advanced SQL Concepts
+## 📁 Folder Structure
 
-| Concept                        | Used In                                                  |
-| ------------------------------ | -------------------------------------------------------- |
-| **Stored Procedures**          | Payroll, attendance, evaluation logic (`procedures/`)    |
-| **Triggers (BEFORE/AFTER)**    | Salary change logs, attendance validations (`triggers/`) |
-| **Transactions**               | Commit/rollback-safe salary processing                   |
-| **CTEs**                       | Analytics queries, recursive reporting                   |
-| **Window Functions**           | Ranking, rolling summaries (planned in `views/`)         |
-| **Nested Subqueries**          | Filtering, conditional reporting                         |
-| **Self-Joins**                 | Manager hierarchy (`Employee.manager_id`)                |
-| **Recursive Queries**          | Optional: Org chart, team hierarchies                    |
-| **Indexes (BTREE, Composite)** | `optimization/indexing_strategy.sql`                     |
-| **Explain Plans**              | Query tuning via `optimization/explain_analytics.sql`    |
-
----
-
-## 🛡 Enterprise SQL Design Features
-
-| Concept                              | Included In                                    |
-| ------------------------------------ | ---------------------------------------------- |
-| **RBAC (Role-Based Access Control)** | `security/role_definitions.sql`                |
-| **GRANT/REVOKE Privileges**          | `security/privilege_matrix.sql`                |
-| **Audit Logs**                       | Via triggers (`audit_logs.sql`)                |
-| **Data Versioning**                  | Salary history via overlapping control         |
-| **Environment-Safe Imports/Exports** | `utils/import_export_tools.sql`                |
-| **Migrations**                       | `migrations/v1.0__init_schema.sql` CI/CD-ready |
-| **Multi-module schema**              | Modular SQL by domain & function               |
-
----
-
-## 📊 Analytical & Reporting SQL
-
-| Concept                                         | Application                                |
-| ----------------------------------------------- | ------------------------------------------ |
-| Aggregates: `SUM`, `AVG`, `COUNT`, `MIN`, `MAX` | Department salary analysis                 |
-| `ROLLUP`, `CUBE` *(future)*                     | Pivot-style dashboards                     |
-| `WEEK`, `MONTH`, `YEAR` filters                 | Time-based analytics on attendance, salary |
-| **Materialized Views** *(planned)*              | Salary/performance snapshot reports        |
-| **Parameterized Views/Procedures**              | Dynamic dashboarding                       |
+```
+dataverse-hrms/
+├── database/
+│   ├── ddl/
+│   │   ├── 00_create_database.sql
+│   │   ├── 01_entities/
+│   │   │   ├── department.sql
+│   │   │   ├── position.sql
+│   │   │   ├── employee.sql
+│   │   │   ├── salary.sql
+│   │   │   ├── attendance.sql
+│   │   │   └── performance.sql
+│   │   ├── 02_relationships.sql
+│   │   ├── 03_constraints.sql
+│   │   └── 04_indexes.sql
+│   ├── dml/
+│   │   └── sample_employees.sql
+│   ├── triggers/
+│   │   └── trg_salary_change_log.sql
+│   ├── procedures/
+│   │   └── calculate_salary.sql
+│   ├── views/
+│   │   └── v_employee_summary.sql
+│   ├── functions/
+│   │   └── fn_get_age.sql
+│   ├── optimization/
+│   ├── security/
+│   │   ├── role_definitions.sql
+│   │   └── privilege_matrix.sql
+│   └── utils/
+│       └── database_cleanup.sql
+├── docs/                       # ERDs, visual docs
+├── migrations/
+└── .env.example
+```
 
 ---
 
-## 🧠 Summary Table
+## 📊 Entity Relationship Diagram (ERD)
 
-| Category            | Status                              |
-| ------------------- | ----------------------------------- |
-| Beginner SQL        | ✅ Mastered                          |
-| Intermediate SQL    | ✅ Fully Covered                     |
-| Advanced SQL        | ✅ Hands-on in logic files           |
-| Enterprise SQL      | ✅ Built-in by design                |
-| Security & Access   | ✅ RBAC, audit, privilege matrix     |
-| DevOps Ready        | ✅ CI/CD scripts and migrations      |
-| Analytics Ready     | ✅ BI-style views and trends planned |
-| Modular Development | ✅ Foldered, decoupled, future-proof |
+> Embed your final SVG here
+![alt text](Dataverse.drawio.svg)
+```
+📍 Place your ERD.svg file here
+```
+
+<details>
+<summary>📝 UML Source (for reference)</summary>
+
+```plantuml
+@startuml
+entity "Department" as D {
+  *id : INT <<PK>>
+  name : VARCHAR
+  location : VARCHAR
+}
+entity "Position" as P {
+  *id : INT <<PK>>
+  title : VARCHAR
+  pay_band : VARCHAR
+  is_managerial : BOOLEAN
+}
+entity "Employee" as E {
+  *id : INT <<PK>>
+  first_name : VARCHAR
+  last_name : VARCHAR
+  email : VARCHAR
+  phone : VARCHAR
+  hire_date : DATE
+  dept_id : INT <<FK>>
+  position_id : INT <<FK>>
+}
+entity "Salary" as S {
+  *id : INT <<PK>>
+  emp_id : INT <<FK>>
+  amount : DECIMAL
+  effective_from : DATE
+  effective_to : DATE
+}
+entity "Attendance" as A {
+  *id : INT <<PK>>
+  emp_id : INT <<FK>>
+  date : DATE
+  check_in_time : TIME
+  check_out_time : TIME
+}
+entity "Performance" as Perf {
+  *id : INT <<PK>>
+  emp_id : INT <<FK>>
+  review_date : DATE
+  score : INT
+  reviewer : VARCHAR
+}
+
+E --> D
+E --> P
+S --> E
+A --> E
+Perf --> E
+@enduml
+```
+
+</details>
 
 ---
 
-## 📁 Files & Folders Supporting This
+## 🔄 Activity Diagram: Employee Lifecycle
 
-* `ddl/01_entities/*.sql` → All core tables
-* `ddl/03_constraints.sql` → Data validation
-* `triggers/` → System events & audit logs
-* `procedures/` → Real business logic (salary, attendance)
-* `views/` → Aggregated insights, dashboards
-* `security/` → Roles, access controls
-* `optimization/` → Indexes, performance tuning
-* `utils/` → Imports, exports, cleanup scripts
+> Embed your final ActivityDiagram.svg here
+
+```
+📍 Place your EmployeeLifecycle.svg file here
+```
+
+<details>
+<summary>📝 UML Source (for reference)</summary>
+
+```plantuml
+@startuml
+start
+:Create Department;
+:Define Position;
+:Add New Employee;
+
+fork
+  :Assign Salary Record;
+  :Insert into Salary Table;
+fork again
+  :Track Attendance;
+  :Insert Attendance;
+fork again
+  :Performance Evaluation;
+  :Log Performance;
+end fork
+
+:Generate Summary Reports;
+
+stop
+@enduml
+```
+
+</details>
 
 ---
 
-## 🧭 Why This Project Is Beyond CRUD
+✅ All components are now coded and documented. This structure represents a fully modular and production-ready SQL backend for enterprise HR systems.
 
-* 🔒 Real-world system roles and access enforcement
-* 🔁 Auditability and event logging via triggers
-* 📊 Reporting views ready for BI integration
-* 📦 Scalable schema meant for APIs and services
-* 🧱 Separation of concerns (DDL, DML, Views, Security, etc.)
-
-> ✅ If you understand this project deeply, you’ve mastered SQL not just as a language — but as a **systems architect**.
-
----
-
-**Built for pros. Designed to scale. Backed by beast-mode SQL.**
-
-— Shrikee
+Be sure to replace the SVG placeholders with your actual diagram files for GitHub/Notion integration.
