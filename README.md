@@ -56,7 +56,6 @@ dataverse-hrms/
 
 ## 📊 Entity Relationship Diagram (ERD)
 
-> Embed your final SVG here
 ![alt text](Dataverse.drawio.svg)
 ```
 📍 Place your ERD.svg file here
@@ -124,7 +123,7 @@ Perf --> E
 
 ## 🔄 Activity Diagram: Employee Lifecycle
 
-> Embed your final ActivityDiagram.svg here
+>![Activity Diagram](Dataverse.drawio.svg)
 
 ```
 📍 Place your EmployeeLifecycle.svg file here
