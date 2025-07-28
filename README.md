@@ -82,7 +82,7 @@ dataverse-hrms/
 
 ## 📊 Entity Relationship Diagram (ERD)
 
-![Entity Relationship](./docs/Dataverse.drawio.svg)
+![Entity Relationship](./Docs/Dataverse.drawio.svg)
 
 ```
 📍 This SVG visually maps all core entities and their relationships.
@@ -92,7 +92,7 @@ dataverse-hrms/
 
 ## 🔄 Activity Flow Diagram — Employee Lifecycle
 
-![Activity Diagram](./docs/Dataverse-Activity.drawio.svg)
+![Activity Diagram](./Docs/Dataverse-Activity.drawio.svg)
 
 ```
 📍 Captures real-time lifecycle from onboarding → attendance → review → reporting.
