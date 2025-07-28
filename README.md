@@ -123,7 +123,7 @@ Perf --> E
 
 ## 🔄 Activity Diagram: Employee Lifecycle
 
->![Activity Diagram](Dataverse.drawio.svg)
+>![Activity Diagram](Dataverse-Activity.drawio.svg)
 
 ```
 📍 Place your EmployeeLifecycle.svg file here
